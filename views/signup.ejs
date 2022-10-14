@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 62.5%; box-sizing: border-box; padding: 0; margin: 0">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/assets/css/base.css" />
+        <link rel="stylesheet" href="/assets/css/signup.css" />
+        <title>Sign up successfully</title>
+    </head>
+    <body
+        style="
+            font-family: 'Lora', serif;
+            font-size: 1.6rem;
+            line-height: 1.5;
+            overflow-y: overlay;
+            background-color: rgb(241, 241, 241);
+        "
+    >
+        <div class="wrapper" style="padding: 4rem 10rem">
+            <div class="inner" style="background-color: #fff; width: 650px">
+                <header class="heading">
+                    <img
+                        src="https://linkosuo.fi/wp-content/uploads/LINKOSUO-624-1-2000x800.jpg"
+                        alt="heading_background"
+                        class="heading__image"
+                        style="display: block; width: 100%"
+                    />
+                </header>
+                <div class="container" style="padding: 0 2rem">
+                    <div class="content" style="margin: 2.4rem 0">
+                        <div
+                            class="greeting"
+                            style="display: flex; justify-content: center; margin: 2rem 0; color: #1c1b1b"
+                        >
+                            <!-- <p class="greeting__paragraph">Hi Tuong Hoang,</p> -->
+                            <p class="greeting__title" style="margin: 0 auto; font-size: 1.6rem; font-weight: 700">
+                                Welcome to Linkosuo
+                            </p>
+                        </div>
+                        <div class="about" style="color: #1c1b1b">
+                            <p class="greeting__paragraph" style="margin: 1.6rem 0; font-size: 1rem; color: #1c1b1b">
+                                Hi <strong><%= username %></strong>, we are delighted to have you a part of our house,
+                                powered by Linkosuo Oy.
+                            </p>
+                            <p class="greeting__paragraph" style="margin: 1.6rem 0; font-size: 1rem; color: #1c1b1b">
+                                Linkosuo's Bakery is a bakery specializing in dry breads, which constantly develops new
+                                products to meet the needs of consumers. The selection includes real classics, such as
+                                skewered bread and Väinämöinen's buttons, chip products that have become favorites of
+                                the whole family, and thin and crispy chips.
+                            </p>
+                            <p class="greeting__paragraph" style="margin: 1.6rem 0; font-size: 1rem; color: #1c1b1b">
+                                Linkosuo responds to many different customer needs with its business. Our lunch
+                                restaurants and cafes serve the entire Pirkanmaa area, offering tasty salads,
+                                home-cooked lunches and delicacies from Linkosuo's own bakery. We are especially known
+                                for our tasty dry bread, from which our products are also exported to other Nordic
+                                countries and the Baltics. In addition to bakery and cafe operations, Linkosuo's party
+                                services help in organizing memorable events.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <%- include('includes/footer.ejs') %>
+            </div>
+        </div>
+    </body>
+</html>

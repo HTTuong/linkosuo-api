@@ -1,0 +1,50 @@
+/* @import 'normalize.css'; */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@100;200;300;400&display=swap');
+
+@font-face {
+    font-family: OrganikaScript;
+    src: url('/assets/fonts/MikaMelvas-OrganikaScript.otf');
+    font-weight: 400;
+}
+
+:root {
+    --header-logo-width: 170px;
+    --header-height: 116px;
+    --header-only-navbar: 7.05rem;
+    --header-only-policy: 45.5px;
+    --header-padding-sides-item: 21px;
+    --header-subnavbar-min-width: 200px;
+    --header-subnavbar-max-width: 270px;
+
+    --header-border-color: #ddd;
+    --header-light-text-color: #6a6a6a;
+    --footer-text-color: #6a6a6a;
+    --primary-color: #e7ad1a;
+    --text-color: #1c1b1b;
+    --white-color: #fff;
+    --text-color-light: #6a6a6a;
+    --border-color: #ddd;
+    --subnavbar-color-text: rgba(255, 255, 255, 0.5);
+    --dot-cart-color: #ff253a;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+    /* scroll-behavior: smooth; */
+}
+
+body {
+    font-family: 'Lora', serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    overflow-y: overlay;
+}

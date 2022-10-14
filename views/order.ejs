@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 62.5%; box-sizing: border-box; padding: 0; margin: 0">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/assets/css/base.css" />
+        <link rel="stylesheet" href="/assets/css/cart.css" />
+        <title>Order successfully</title>
+    </head>
+    <body
+        style="
+            font-family: 'Lora', serif;
+            font-size: 1.6rem;
+            line-height: 1.5;
+            overflow-y: overlay;
+            background-color: rgb(241, 241, 241);
+        "
+    >
+        <div class="wrapper" style="padding: 4rem 10rem">
+            <div class="inner" style="background-color: #fff; width: 650px">
+                <header class="heading">
+                    <img
+                        src="https://linkosuo.fi/wp-content/uploads/omena_kaneli-2000x800.jpg"
+                        alt="heading_background"
+                        class="heading__image"
+                        style="display: block; width: 100%"
+                    />
+                </header>
+                <div class="container" style="padding: 0 3rem">
+                    <div class="content" style="margin: 2.4rem 0">
+                        <div class="greeting" style="margin: 2rem 0; color: #1c1b1b">
+                            <div
+                                style="
+                                    margin: 0 auto;
+                                    font-size: 2rem;
+                                    font-weight: 700;
+                                    margin-top: 1.2rem;
+                                    width: 100%;
+                                    text-align: center;
+                                "
+                            >
+                                Thank you for your order !
+                            </div>
+                            <div
+                                class="greeting__title"
+                                style="
+                                    margin: 0 auto;
+                                    font-size: 1.2rem;
+                                    font-weight: 400;
+                                    margin-top: 6px;
+                                    text-align: center;
+                                    width: 100%;
+                                "
+                            >
+                                You will receive an email when your purchase is shipped. If you have any questions, call
+                                us 020-770-2400.
+                            </div>
+                            <div
+                                class="greeting__title"
+                                style="
+                                    margin: 0 auto;
+                                    font-size: 1.6rem;
+                                    font-weight: 700;
+                                    margin-top: 2.4rem;
+                                    text-align: center;
+                                    width: 100%;
+                                "
+                            >
+                                Shopping basket
+                            </div>
+                        </div>
+                        <div style="color: #1c1b1b; margin-top: 44px">
+                            <div class="cart-titles" style="border-bottom: 1px solid #ddd; width: 100%">
+                                <div
+                                    class="cart-titles-item"
+                                    style="
+                                        display: inline-block;
+                                        color: #6a6a6a;
+                                        font-size: 1.2rem;
+                                        width: 74%;
+                                        margin: 0;
+                                    "
+                                >
+                                    Products
+                                </div>
+                                <div
+                                    class="cart-titles-item"
+                                    style="
+                                        display: inline-block;
+                                        color: #6a6a6a;
+                                        font-size: 1.2rem;
+                                        width: 24%;
+                                        margin: 0;
+                                        text-align: right;
+                                    "
+                                >
+                                    In total
+                                </div>
+                            </div>
+                            <% if (products.length > 0) { %>
+                            <ul class="list" style="width: 100%; list-style: none; padding: 0; margin: 0">
+                                <% products.forEach((product) => { %>
+                                <li class="list-item" style="padding-top: 1.6rem; margin: 0; height: 8.8rem">
+                                    <img
+                                        class="list-item__img"
+                                        style="width: 25%; float: left"
+                                        src="<%= product.image %>"
+                                        alt="<%= product.name %>"
+                                    />
+                                    <div class="list-item__info" style="padding: 0 25px; float: left; padding-top: 4%">
+                                        <h2
+                                            class="list-item__info-title"
+                                            style="font-size: 1.2rem; font-weight: 500; margin: 0; color: #1c1b1b"
+                                        >
+                                            <%= product.name %>
+                                        </h2>
+                                        <span
+                                            class="list-item__info-price"
+                                            style="margin-top: 6px; font-size: 1.1rem; font-weight: 400; color: #6a6a6a"
+                                            ><%= product.price %>€</span
+                                        >
+                                        <span
+                                            class="list-item__info-amount"
+                                            style="
+                                                margin-top: 6px;
+                                                font-size: 1.1rem;
+                                                font-weight: 400;
+                                                color: #6a6a6a;
+                                                display: block;
+                                            "
+                                        >
+                                            x <%= product.amount %></span
+                                        >
+                                    </div>
+
+                                    <div
+                                        class="list-item__total-price"
+                                        style="
+                                            font-size: 1.1rem;
+                                            font-weight: 400;
+                                            color: #6a6a6a;
+                                            line-height: 140px;
+                                            width: fit-content;
+                                            float: right;
+                                        "
+                                    >
+                                        <%= (product.price * product.amount).toFixed(2) %>€
+                                    </div>
+                                </li>
+                                <% }) %>
+                            </ul>
+                            <% } %>
+                            <div
+                                class="cart-total-section"
+                                style="border-top: 1px solid #ddd; padding-top: 25px; margin-top: 1.6rem"
+                            >
+                                <div
+                                    class="cart-total__price"
+                                    style="
+                                        width: 100%;
+                                        text-align: right;
+                                        font-size: 1.1rem;
+                                        font-weight: 500;
+                                        margin-bottom: 15px;
+                                    "
+                                >
+                                    Total: €<%= total_price %>
+                                </div>
+                                <div
+                                    class="cart-total__description"
+                                    style="
+                                        font-size: 0.9rem;
+                                        text-align: right;
+                                        font-weight: 400;
+                                        color: #6a6a6a;
+                                        margin-bottom: 14px;
+                                    "
+                                >
+                                    The total price is shown at the checkout
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%- include('includes/footer.ejs') %>
+            </div>
+        </div>
+    </body>
+</html>
