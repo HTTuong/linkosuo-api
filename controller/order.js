@@ -84,7 +84,7 @@ exports.handleUserOrder = async (req, res, next) => {
         transporter.sendMail({
             to: result.email,
             from: 'hoangthetuong2001@gmail.com',
-            subject: 'Sign up successfully !',
+            subject: 'Order successfully !',
             html: dataTemplate,
         });
     } catch (error) {
