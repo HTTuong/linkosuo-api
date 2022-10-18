@@ -36,6 +36,7 @@ app.use((error, req, res, next) => {
 });
 
 const dotenv = require('dotenv');
+
 dotenv.config({ path: './.env' });
 mongoose
     .connect(process.env.DATABASE)
@@ -45,3 +46,10 @@ mongoose
     .catch((error) => {
         console.log(error);
     });
+
+process.on('SIGTERM', () => {
+    console.log('hello SIGTERM');
+    app.listen(3000).close(() => {
+        console.log('Process terminated!');
+    });
+});
