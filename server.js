@@ -38,10 +38,11 @@ app.use((error, req, res, next) => {
 const dotenv = require('dotenv');
 
 dotenv.config({ path: './.env' });
+
 mongoose
     .connect(process.env.DATABASE)
     .then(() => {
-        app.listen(3000);
+        app.listen(process.env.PORT);
     })
     .catch((error) => {
         console.log(error);
