@@ -20,7 +20,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
-// app.use('/assets', express.static(path.join(__dirname, 'images')));
+
 app.use(express.static(__dirname + 'assets'));
 
 app.use('/linkosuo-ui/collections', collectionsRoutes);
@@ -35,8 +35,10 @@ app.use((error, req, res, next) => {
     res.status(status).json({ message: message, error: error });
 });
 
+const dotenv = require('dotenv');
+dotenv.config({ path: './.env' });
 mongoose
-    .connect('mongodb+srv://Tuong2705:DroneX27052001@cluster0.yfpxh.mongodb.net/linkosuo')
+    .connect(process.env.DATABASE)
     .then(() => {
         app.listen(3000);
     })
