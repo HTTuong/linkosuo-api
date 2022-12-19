@@ -1,3 +1,3 @@
 ## API
 
-https://linkosuo-api.herokuapp.com/
+https://linkosuo-api.herokuapp.com/linkosuo-ui
