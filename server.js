@@ -9,7 +9,6 @@ const authRoutes = require('./routes/auth');
 const orderRoutes = require('./routes/order');
 const cors = require('cors');
 const config = require('./constants.d');
-
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
@@ -36,23 +35,23 @@ app.use((error, req, res, next) => {
     res.status(status).json({ message: message, error: error });
 });
 
-// const dotenv = require('dotenv');
-// const { resourceUsage } = require('process');
+const dotenv = require('dotenv');
+const { resourceUsage } = require('process');
 
-// dotenv.config({ path: './.env' });
+dotenv.config({ path: './.env' });
 
 mongoose
-    .connect(config.DATABASE)
+    .connect(process.env.DATABASE)
     .then(() => {
-        app.listen(config.PORT);
+        app.listen(process.env.PORT);
     })
     .catch((error) => {
         console.log(error);
     });
 
-// process.on('SIGTERM', () => {
-//     console.log('hello SIGTERM');
-//     app.listen(3000).close(() => {
-//         console.log('Process terminated!');
-//     });
-// });
+process.on('SIGTERM', () => {
+    console.log('hello SIGTERM');
+    app.listen(3000).close(() => {
+        console.log('Process terminated!');
+    });
+});
